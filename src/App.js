@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import WrongNetworkMessage from './components/WrongNetworkMessage'
+import ConnectWalletButton from './components/ConnectWalletButton'
+import TodoList from './components/TodoList'
 
-function App() {
+/* 
+const tasks = [
+  { id: 0, taskText: 'clean', isDeleted: false }, 
+  { id: 1, taskText: 'food', isDeleted: false }, 
+  { id: 2, taskText: 'water', isDeleted: true }
+]
+*/
+
+const App = () => {
+
+  // Calls Metamask to connect wallet on clicking Connect Wallet button
+  const connectWallet = async () => {
+
+  }
+
+  // Just gets all the tasks from the contract
+  const getAllTasks = async () => {
+
+  }
+
+  // Add tasks from front-end onto the blockchain
+  const addTask = async e => {
+
+  }
+
+  // Remove tasks from front-end by filtering it out on our "back-end" / blockchain smart contract
+  const deleteTask = key => async () => {
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-[#97b5fe] h-screen w-screen flex justify-center py-6'>
+      {!'is user not logged in?' ? <ConnectWalletButton /> :
+        'is this the correct network?' ? <TodoList /> : <WrongNetworkMessage />}
     </div>
-  );
+  )
 }
 
 export default App;
